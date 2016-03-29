@@ -6,6 +6,13 @@ ENV ACTIVEMQ_TCP=61616 ACTIVEMQ_AMQP=5672 ACTIVEMQ_STOMP=61613 ACTIVEMQ_MQTT=188
 
 ENV ACTIVEMQ_HOME /opt/activemq
 
+ENV BROKER_USERNAME admin
+ENV BROKER_PASSWORD admin
+ENV ADMIN_USERNAME admin
+ENV ADMIN_PASSWORD admin
+ENV MIN_JVM_HEAP 64M
+ENV MAX_JVM_HEAP 1G
+
 RUN \
     curl -O http://archive.apache.org/dist/activemq/$ACTIVEMQ_VERSION/$ACTIVEMQ-bin.tar.gz && \
     mkdir -p /opt && \
@@ -15,9 +22,11 @@ RUN \
     useradd -r -M -d $ACTIVEMQ_HOME activemq && \
     chown activemq:activemq /opt/$ACTIVEMQ -R
 
+ADD run.sh $ACTIVEMQ_HOME/
+
 USER activemq
 
 WORKDIR $ACTIVEMQ_HOME
 EXPOSE $ACTIVEMQ_TCP $ACTIVEMQ_AMQP $ACTIVEMQ_STOMP $ACTIVEMQ_MQTT $ACTIVEMQ_WS $ACTIVEMQ_UI
 
-CMD ["/bin/bash", "-c", "bin/activemq console"]
+CMD ./run.sh
