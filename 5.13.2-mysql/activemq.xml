@@ -52,4 +52,5 @@
         <property name="poolPreparedStatements" value="true"/>
     </bean>
 
+    <import resource="jetty.xml"/>
 </beans>
