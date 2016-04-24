@@ -17,11 +17,13 @@
         </managementContext>
 
         <persistenceAdapter>
-            <jdbcPersistenceAdapter dataDirectory="activemq-data" dataSource="#mysql-ds">
+            <jdbcPersistenceAdapter dataDirectory="activemq-data"
+                                    dataSource="#mysql-ds"
+                                    createTablesOnStartup="false">
 	        <statements>
 		    <statements stringIdDataType="VARCHAR(128)"
-		  	        containerNameDataType="VARCHAR(128)"
-			        msgIdDataType="VARCHAR(128)"/>
+                        containerNameDataType="VARCHAR(128)"
+                        msgIdDataType="VARCHAR(128)"/>
 	        </statements>
 	    </jdbcPersistenceAdapter>
         </persistenceAdapter>
