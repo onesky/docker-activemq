@@ -43,7 +43,7 @@
         </systemUsage>
 
         <transportConnectors>
-            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616" updateClusterClients="true"/>
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616" updateClusterClients="false"/>
         </transportConnectors>
 
         <shutdownHooks>
