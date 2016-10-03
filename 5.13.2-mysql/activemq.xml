@@ -19,6 +19,7 @@
         <persistenceAdapter>
             <jdbcPersistenceAdapter dataDirectory="activemq-data"
                                     dataSource="#mysql-ds"
+                                    useDatabaseLock="false" 
                                     createTablesOnStartup="false">
 	        <statements>
 		    <statements stringIdDataType="VARCHAR(128)"
