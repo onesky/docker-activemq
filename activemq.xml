@@ -51,6 +51,13 @@
             <bean xmlns="http://www.springframework.org/schema/beans" class="org.apache.activemq.hooks.SpringContextHook" />
         </shutdownHooks>
 
+        <destinationPolicy>
+            <policyMap>
+                <policyEntries>
+                    <policyEntry queue=">" consumersBeforeDispatchStarts="3" timeBeforeDispatchStarts="2000"/>
+                </policyEntries>
+            </policyMap>
+        </destinationPolicy>
     </broker>
 
     <bean id="mysql-ds" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
