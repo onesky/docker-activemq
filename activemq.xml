@@ -54,7 +54,7 @@
         <destinationPolicy>
             <policyMap>
                 <policyEntries>
-                    <policyEntry queue=">" consumersBeforeDispatchStarts="3" timeBeforeDispatchStarts="2000"/>
+                    <policyEntry queue=">" consumersBeforeDispatchStarts="6" timeBeforeDispatchStarts="2000"/>
                 </policyEntries>
             </policyMap>
         </destinationPolicy>
